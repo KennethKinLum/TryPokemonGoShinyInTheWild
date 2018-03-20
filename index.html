@@ -39,6 +39,9 @@
       htmlImgLugia = '<img src="http://i63.tinypic.com/21cfms6.jpg">',
       htmlImgShinyLugia = '<img src="http://i64.tinypic.com/2qldeua.jpg">';
 
+      $(htmlImgLugia).hide().prependTo("#results");
+      $(htmlImgShinyLugia).hide().prependTo("#results");
+
       $("#try").click(function() {
         var rand = Math.random();
 
