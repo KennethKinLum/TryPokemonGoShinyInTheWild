@@ -53,10 +53,10 @@
         count++;
 
         if (rand < 1/16) {
-          $(htmlImgShinyLugia).hide().fadeIn("slow").prependTo("#results").width("118px");
+          $(htmlImgShinyLugia).hide().prependTo("#results").fadeIn("slow").width("118px");
           countShiny++;
         } else {
-          $(htmlImgLugia).hide().fadeIn("slow").prependTo("#results").width("118px");
+          $(htmlImgLugia).hide().prependTo("#results").fadeIn("slow").width("118px");
         }
 
         $("#count-total").html("試了多少次：" + count);
