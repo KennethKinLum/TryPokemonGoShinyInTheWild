@@ -16,7 +16,8 @@
     }
     #counts { margin-top: .6em }
     #count-shiny { padding-left: 1em }
-    #results img { max-width: 118px }
+    #results { line-height: 120px }
+    #results img { display: inline-block; width: 0; max-width: 118px; transition: width .5s; vertical-align: middle }
   </style>
 
   <section id="control-panel">
@@ -30,8 +31,8 @@
     </div>
   </section>
 
-  <div id="results">
-  </div>
+  <section id="results">
+  </section>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -52,10 +53,10 @@
         count++;
 
         if (rand < 1/16) {
-          $(htmlImgShinyLugia).hide().fadeIn("slow").prependTo("#results");
+          $(htmlImgShinyLugia).hide().fadeIn("slow").prependTo("#results").width("118px");
           countShiny++;
         } else {
-          $(htmlImgLugia).hide().fadeIn("slow").prependTo("#results");
+          $(htmlImgLugia).hide().fadeIn("slow").prependTo("#results").width("118px");
         }
 
         $("#count-total").html("試了多少次：" + count);
