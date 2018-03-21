@@ -40,24 +40,25 @@
 
     (function() {
       var count = 0,
-      countShiny = 0,
-      htmlImgLugia = '<img src="lugia.jpg">',
-      htmlImgShinyLugia = '<img src="shiny-lugia.jpg">';
+          countShiny = 0,
+          htmlImgLugia = '<img src="lugia.jpg">',
+          htmlImgShinyLugia = '<img src="shiny-lugia.jpg">';
 
       $(htmlImgLugia).hide().prependTo("#results");
       $(htmlImgShinyLugia).hide().prependTo("#results");
 
       $("#try").click(function() {
-        var rand = Math.random();
+        var result;
 
         count++;
 
-        if (rand < 1/16) {
-          $(htmlImgShinyLugia).hide().prependTo("#results").fadeIn("slow").width("118px");
+        if (Math.random() < 1/16) {
+          result = htmlImgShinyLugia;
           countShiny++;
         } else {
-          $(htmlImgLugia).hide().prependTo("#results").fadeIn("slow").width("118px");
+          result = htmlImgLugia;
         }
+        $(result).hide().prependTo("#results").fadeIn("slow").width("118px");
 
         $("#count-total").html("試了多少次：" + count);
         $("#count-shiny").html("多少隻色違：" + countShiny);
