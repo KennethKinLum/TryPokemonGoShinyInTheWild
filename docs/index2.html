@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <meta name="viewport" content="width=380, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
 
@@ -16,8 +16,8 @@
     }
     #counts { margin-top: .6em }
     #count-shiny { padding-left: 1em }
-    #results { line-height: 120px }
-    #results img { display: inline-block; width: 0; max-width: 118px; transition: width .5s; vertical-align: middle }
+    #results { line-height: 106px }
+    #results img { display: inline-block; width: 0; max-width: 106px; transition: width .5s; vertical-align: middle }
   </style>
 
   <section id="control-panel">
@@ -41,8 +41,8 @@
     (function() {
       var count = 0,
           countShiny = 0,
-          htmlImgLugia = '<img src="delibird.png">',
-          htmlImgShinyLugia = '<img src="shiny-delibird.png">';
+          htmlImgLugia = '<img src="lugia.jpg">',
+          htmlImgShinyLugia = '<img src="shiny-lugia.jpg">';
 
       $(htmlImgLugia).hide().prependTo("#results");
       $(htmlImgShinyLugia).hide().prependTo("#results");
@@ -52,13 +52,13 @@
 
         count++;
 
-        if (Math.random() < 1/450) {
+        if (Math.random() < 1/16) {
           result = htmlImgShinyLugia;
           countShiny++;
         } else {
           result = htmlImgLugia;
         }
-        $(result).hide().prependTo("#results").fadeIn("slow").width("118px");
+        $(result).hide().prependTo("#results").fadeIn("slow").width("106px");
 
         $("#count-total").html("試了多少次：" + count);
         $("#count-shiny").html("多少隻色違：" + countShiny);
